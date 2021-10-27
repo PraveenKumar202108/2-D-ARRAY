@@ -1,36 +1,37 @@
- #include<stdio.h> 
-#include<conio.h> 
-void main() 
-{ 
-int i,j,item,loc=0,loc1=0; 
-int a[2][2]; 
-clrscr(); 
-printf("\n\tThis Program is Used To seaech an element in 2Dimensional Array using Linear 
-Search\n"); 
-printf("\n\tEnter The Value Of Array:"); 
-for(i=1;i<=2;i++) 
-{ 
-for(j=1;j<=2;j++) 
-{ 
-scanf("%d",&a[i][j]); 
-} 
-} 
-printf("\n\tEnter The Value To Be Serched:"); 
-scanf("%d",&item); 
-for(i=1;i<=2;i++) 
-{ 
-for(j=1;j<=2;j++) 
-{ 
-if(item==a[i][j]) 
-{ 
-loc=i; 
-loc1=j; 
-break; 
-} 
-} 
-} 
-printf("\n\tThe Item is at %d Row And %d Coloumn.",loc,loc1); 
-printf("\n\n\t\tSearch Completed."); 
-printf("\n\n\n\t\t\tTHANKYOU!"); 
-getch(); 
+ #include<stdio.h>
+
+int main(){
+  int a, b, X, count=0;
+
+
+  printf("Enter the number of Row and Column: \n");
+  scanf("%d %d", &a, &b);
+
+
+  int array[a][b];
+
+
+  printf("Enter %d elements: \n", (a*b));
+  for(int i=0; i<a; i++){
+    for(int j=0; j<b; j++){
+      scanf("%d", &array[i][j]);
+    } }
+
+  printf("Enter the element to get the position: \n");
+  scanf("%d", &X);
+
+  for(int i=0; i<a; i++){
+    for(int j=0; j<b; j++){
+      if(array[i][j] == X){
+
+        printf("(%d, %d) \n", i, j);
+        count++;
+      }
+    } }
+
+
+  if(count==0)
+    printf("Not found \n");
+
+  return 0;
 }
